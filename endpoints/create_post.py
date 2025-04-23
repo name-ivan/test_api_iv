@@ -20,3 +20,8 @@ class CreatePost():
     @allure.step("Check the title is the same as sent")
     def check_response_title_is_correct(self, title):
         assert self.response_json['title'] == title
+
+    @allure.step("Check the received eroor code is 400 when the data is negative")
+    def check_bad_request(self):
+        assert self.response.status_code == 400
+        
