@@ -4,9 +4,12 @@ import allure
 class CreatePost():
     url = "https://jsonplaceholder.typicode.com/posts"
     response = None
+    headers = {"application_ttpe": "json"}
+
     
     @allure.step("Crete new post")
-    def create_new_post(self, payload, headers):
+    def create_new_post(self, payload, headers=None):
+        headers = headers if headers else self.headers
         self.response = requests.post(
             self.url,
             json=payload,
