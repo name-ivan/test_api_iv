@@ -12,7 +12,6 @@ def test_post_a_post(create_post_endpoint):
 
 
     create_post_endpoint.create_new_post(payload, headers)
-    response = create_post_endpoint.response_json
     create_post_endpoint.check_response_title_is_correct(payload['title'])
     
         
