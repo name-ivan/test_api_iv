@@ -1,11 +1,8 @@
 import requests
 import allure
+from test_api_iv.endpoints.endpoint import Endpoint
 
-class CreatePost():
-    url = "https://jsonplaceholder.typicode.com/posts"
-    response = None
-    headers = {"application_ttpe": "json"}
-
+class CreatePost(Endpoint):
     
     @allure.step("Crete new post")
     def create_new_post(self, payload, headers=None):
